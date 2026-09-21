@@ -3,8 +3,8 @@
 # Ports GeoGebra content from a macOS Portable .zip (optionally swapping
 # in the matching official Electron shell), then PACKAGES the result into
 # distributable files instead of installing directly:
-#   - geogebra-classic6_<version>_amd64.deb   (Debian/Ubuntu - recommended)
-#   - geogebra-classic6-<version>-linux-x64.tar.gz + install.sh/uninstall.sh
+#   - geogebra-classic-6_<version>_amd64.deb   (Debian/Ubuntu - recommended)
+#   - geogebra-classic-6-<version>-linux-x64.tar.gz + install.sh/uninstall.sh
 #     (works on any Linux x64 distro)
 #
 # Build once here, then copy the .deb (or .tar.gz) to any machine and
@@ -25,8 +25,8 @@ usage() {
 Ports GeoGebra content from a macOS Portable .zip (optionally swapping
 in the matching official Electron shell), then PACKAGES the result into
 distributable files instead of installing directly:
-  - geogebra-classic6_<version>_amd64.deb   (Debian/Ubuntu - recommended)
-  - geogebra-classic6-<version>-linux-x64.tar.gz + install.sh/uninstall.sh
+  - geogebra-classic-6_<version>_amd64.deb   (Debian/Ubuntu - recommended)
+  - geogebra-classic-6-<version>-linux-x64.tar.gz + install.sh/uninstall.sh
     (works on any Linux x64 distro)
 
 Build once here, then copy the .deb (or .tar.gz) to any machine and
@@ -157,7 +157,7 @@ c_ok "Đã ghép xong nội dung phiên bản $VERSION. Bắt đầu đóng gói
 
 # ---------- 4a. Gói .tar.gz portable (kèm install.sh / uninstall.sh) ----------
 build_tar() {
-  local PKG_NAME="geogebra-classic6-${VERSION}-linux-x64"
+  local PKG_NAME="geogebra-classic-6-${VERSION}-linux-x64"
   local PKG_DIR="$WORK/pkg-tar/$PKG_NAME"
   mkdir -p "$PKG_DIR"
   cp -a "$STAGE/." "$PKG_DIR/app"
@@ -261,7 +261,7 @@ $ICON_LINE
 EOF
 
   cat > "$ROOT/DEBIAN/control" <<EOF
-Package: geogebra-classic6-ported
+Package: geogebra-classic-6-ported
 Version: ${DEBVER}
 Section: education
 Priority: optional
@@ -287,7 +287,7 @@ exit 0
 EOF
   chmod 755 "$ROOT/DEBIAN/postinst"
 
-  local OUT_DEB="$OUTPUT_DIR/geogebra-classic6_${DEBVER}_amd64.deb"
+  local OUT_DEB="$OUTPUT_DIR/geogebra-classic-6_${DEBVER}_amd64.deb"
   dpkg-deb --root-owner-group --build "$ROOT" "$OUT_DEB" >/dev/null
   DEB_OUT="$OUT_DEB"
   c_ok "Đã tạo: $OUT_DEB"
