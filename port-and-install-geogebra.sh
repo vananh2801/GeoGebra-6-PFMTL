@@ -1,23 +1,4 @@
 #!/usr/bin/env bash
-#
-# Ports GeoGebra content from a macOS Portable .zip (optionally swapping
-# in the matching official Electron shell), then PACKAGES the result into
-# distributable files instead of installing directly:
-#   - geogebra-classic-6_<version>_amd64.deb   (Debian/Ubuntu - recommended)
-#   - geogebra-classic-6-<version>-linux-x64.tar.gz + install.sh/uninstall.sh
-#     (works on any Linux x64 distro)
-#
-# Build once here, then copy the .deb (or .tar.gz) to any machine and
-# install it there - no need to redo the port or re-download Electron.
-#
-# USAGE:
-#   ./build-geogebra-package.sh --mac MAC.zip --base LINUX.zip --electron-shell auto
-#   ./build-geogebra-package.sh --mac MAC.zip --electron-shell auto   # reuses ~/.local/share/GeoGebra as base
-#
-# Options:
-#   --format deb|tar|both   (default: both)
-#   --output-dir DIR        (default: current directory)
-#
 set -euo pipefail
 
 usage() {
