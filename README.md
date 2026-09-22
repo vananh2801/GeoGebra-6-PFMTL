@@ -10,6 +10,8 @@ cd ./GeoGebra-6-PFMTL
 sudo chmod +x port-geogebra-6-PFMTL.sh
 ```
 
+Tải file .zip của Windows cần port về, cho vào cùng thư mục với script, xài ```curl``` hay ```wget``` đều được. Tên file thường có dạng GeoGebra-Windows-Portable-X-Y-Z.zip.
+
 Ở đây, ta có ba lựa chọn như sau:
 
 1. Chỉ port và đóng gói thành .zip:
@@ -24,7 +26,7 @@ sudo chmod +x port-geogebra-6-PFMTL.sh
 
 3. Port và cài vào máy, không đóng gói thành .zip:
     ```bash
-    sudo ./port-geogebra-6-PFMTL.sh --win GeoGebra-Windows-Portable-X-Y-Z.zip --install
+    sudo ./port-geogebra-6-PFMTL.sh --win GeoGebra-Windows-Portable-X-Y-Z.zip --format none --install
     ```
 
 Thêm cờ ```electron-shell``` để tuỳ chỉnh nguồn Electron:
