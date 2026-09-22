@@ -9,6 +9,8 @@ cd ./GeoGebra-6-PFMTL
 chmod +x port-geogebra-6-PFMTL.sh
 ```
 
+Ở đây, ta có ba lựa chọn như sau:
+
 1. Chỉ port và đóng gói thành .zip:
     ```bash
     ./port-geogebra-6-PFMTL.sh --win GeoGebra-Windows-Portable-X-Y-Z.zip
